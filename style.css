@@ -27,6 +27,19 @@ aside {
     padding: 15px 0px;
 }
 
+.information, .options {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.information > h2, .options > h2 {
+    border-bottom: 1px solid black;
+}
+
+.options {
+    padding-bottom: 19px;
+}
+
 ul{
     list-style: none;
     padding: 0;
