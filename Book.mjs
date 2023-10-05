@@ -60,3 +60,5 @@ const Book = (title, author, pageNumber, language, published, pagesRead, stat) =
     }
 }
 
+export { Book }
+
