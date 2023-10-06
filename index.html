@@ -1,53 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Library</title>
-    <link type="text/css" rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <header>
-      <img src="./assets/book-stack.png" alt="">
-      <h1>My Library</h1>
-      <button>Sign in</button>
-    </header>
-    <aside>
-      <section class="information">
-        <h2>Information</h2>
-        <ul>
-          <li>
-            <p>Books</p>
-            <p>0</p>
-          </li>
-          <li>
-            <p>Read Books</p>
-            <p>0</p>
-          </li>
-          <li>
-            <p>Total Pages</p>
-            <p>0</p>
-          </li>
-          <li>
-            <p>Read Pages</p>
-            <p>0</p>
-          </li>
-        </ul>
-      </section>
-      <section class="options">
-        <h2>Storage Options</h2>
-        <button>+ New Book</button>
-      </section>
-    </aside>
-    <main></main>
-    <footer>
-      <p>Copyright © 2023 Christopher Patrick Tortora</p>
-      <a href="https://github.com/Christopher-Patrick-Tortora">
-        <img src="./assets/github.png">
-      </a>
-    </footer>
-	<script type="module" src="main.mjs"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My Library</title>
+  <link type="text/css" rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <img src="./assets/book-stack.png" alt="">
+    <h1>My Library</h1>
+    <button>Sign in</button>
+  </header>
+  <aside>
+    <section class="information">
+      <h2>Information</h2>
+      <ul>
+        <li>
+          <p>Books</p>
+          <p>0</p>
+        </li>
+        <li>
+          <p>Read Books</p>
+          <p>0</p>
+        </li>
+        <li>
+          <p>Total Pages</p>
+          <p>0</p>
+        </li>
+        <li>
+          <p>Read Pages</p>
+          <p>0</p>
+        </li>
+      </ul>
+    </section>
+    <section class="options">
+      <h2>Storage Options</h2>
+      <button id="add"><img src="assets/add.png" alt=""> New Book</button>
+    </section>
+  </aside>
+  <main></main>
+  <footer>
+    <p>Copyright © 2023 Christopher Patrick Tortora</p>
+    <a href="https://github.com/Christopher-Patrick-Tortora">
+      <img src="./assets/github.png">
+    </a>
+  </footer>
+  <dialog>
+    <img class="close_form" src="./assets/close.png" alt="">
+    <form action="#">
+      <fieldset>
+        <legend><h2>Add New Book</h2></legend>
+        <li>
+          <label for="title">Title*</label>
+          <input type="text" id="title" name="title" placeholder="Title" required>
+        </li>
+        <li>
+          <label for="author">Author*</label>
+          <input type="text" id="author" name="author" placeholder="Author" required>
+        </li>
+        <li>
+          <label for="genre">Genre*</label>
+          <input type="text" id="genre" name="genre" placeholder="Genre" required>
+        </li>
+        <li>
+          <label for="pages">Pages*</label>
+          <input type="number" id="pages" name="pages" placeholder="0" required>
+        </li>
+        <li>
+          <label for="language">Language*</label>
+          <input type="text" id="language" name="language" placeholder="Language" required>
+        </li>
+        <li>
+          <label for="published">Published*</label>
+          <input type="date" id="published" name="published" required>
+        </li>
+        <li>
+          <label for="status">Status*</label>
+            <select name="status" id="status" autocomplete="off">
+              <option value="Not Started" selected>Not Started</option>
+              <option value="Started">Started</option>
+              <option value="Finished">Finished</option>
+            </select> 
+        </li>
+        <li class="pages_read">
+          <label for="pagesRead">Pages Read*</label>
+          <input value=0 type="number" id="pagesRead" name="pagesRead" placeholder="0" required>
+        </li>
+      </fieldset>
+      <ul class="form_buttons">
+        <li>
+          <button class="submit_form">Add Book</button>
+        </li>
+        <li>
+          <button class="clear_form">Clear Fields</button>
+        </li>
+      </ul>
+    </form>
+  </dialog>
+  <script type="module" src="main.mjs"></script>
+</body>
+
 </html>

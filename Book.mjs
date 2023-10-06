@@ -1,4 +1,4 @@
-const Book = (title, author, genre, pageNumber, language, published, pagesRead, stat) => {
+const Book = (title, author, genre, pages, language, published, pagesRead, stat) => {
     
     return {
         set title(newTitle) {
@@ -25,12 +25,12 @@ const Book = (title, author, genre, pageNumber, language, published, pagesRead, 
             return genre
         },
 
-        set pageNumber(newPageNumber) {
-            pageNumber = newPageNumber
+        set pages(newPageNumber) {
+            pages = newPageNumber
         },
 
-        get pageNumber() {
-            return pageNumber
+        get pages() {
+            return pages
         },
 
         set language(newLanguage) {

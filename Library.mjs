@@ -34,7 +34,9 @@ const Library = () => {
     return {
         get collection() {
             return collection
-        }
+        },
+
+        addBook
     }
 
 }
