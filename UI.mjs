@@ -7,6 +7,7 @@ const UI = () => {
     const loadLibrary = () => {
         library.collection.forEach(book => {
             createBookCard(book)
+            console.log(library.collection)
         })
 
     }
@@ -21,14 +22,14 @@ const UI = () => {
     const createBookCard = (book) => {
         const display = document.querySelector('main')
         display.innerHTML += `
-        <section class="book">
-            <h3>${book.title}</h3>
+        <section class="book" data-index=${'test'}>
+        <fieldset>
+            <legend><h3>${book.title}</h3></legend>
             <p>By: ${book.author}</p>
             <p>Genre: ${book.genre}</p>
             <p>Pages: ${book.pages}</p>
             <p>Language: ${book.language}</p>
             <p>Published: ${book.published}</p>
-            <p>Pages read: ${book.pagesRead}</p>
             <label for="status">Status: </label>
             <select name="status" class="status">
                 ${book.stat === 'Not Started' ?
@@ -40,6 +41,7 @@ const UI = () => {
                 ${book.stat === 'Finished' ?
                 `<option value="Finished" selected>Finished</option>` :
                 `<option value="Finished">Finished</option>`}
+            </fieldset>
             </select> 
         </section>`
     }
@@ -79,10 +81,8 @@ const UI = () => {
                 library.addBook(book)
                 clearLibrary()
                 loadLibrary()
-
                 dialog.close()
                 form.reset()
-                console.log(book)
             }
         })
     }
@@ -96,29 +96,12 @@ const UI = () => {
         })
     }
 
-    const statusListener = () => {
-        const statusOptions = document.querySelectorAll('option')
-        const pagesRead = document.querySelector('.pages_read')
-        statusOptions.forEach(option => {
-            option.addEventListener('click', () => {
-                console.log(pagesRead.value)
-                if (option.value === 'Not Started') {
-                    document.querySelector('#pagesRead').value = 0;
-                }
-                else if (option.value === 'Finished') {
-                    document.querySelector('#pagesRead').value = document.querySelector('#pages').value;
-                }
-            })
-        })
-
-    }
 
     const init = () => {
         loadLibrary()
         addBookListener()
         closeFormListener()
         clearFormListener()
-        statusListener()
         submitFormListener()
     }
 
