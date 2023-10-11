@@ -7,7 +7,6 @@ const UI = () => {
     const loadLibrary = () => {
         library.collection.forEach(book => {
             createBookCard(book)
-            console.log(library.collection)
         })
 
     }
@@ -22,7 +21,7 @@ const UI = () => {
     const createBookCard = (book) => {
         const display = document.querySelector('main')
         display.innerHTML += `
-        <section class="book" data-index=${'test'}>
+        <section class="book" data-index=${library.getBookIndex(book)}>
         <fieldset>
             <legend><h3>${book.title}</h3></legend>
             <p>By: ${book.author}</p>

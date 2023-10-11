@@ -28,12 +28,22 @@ const Library = () => {
         collection.push(book)
     }
 
+    const removeBook  = (book) => {
+       
+    }
+
+    const getBookIndex = (book) => {
+        return collection.indexOf(book)
+    }
+
     return {
         get collection() {
             return collection
         },
 
-        addBook
+        addBook,
+
+        getBookIndex
     }
 
 }
