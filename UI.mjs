@@ -8,7 +8,6 @@ const UI = () => {
         library.collection.forEach(book => {
             createBookCard(book)
         })
-
     }
 
     const clearLibrary = () => {
@@ -30,7 +29,7 @@ const UI = () => {
             <p>Language: ${book.language}</p>
             <p>Published: ${book.published}</p>
             <label for="status">Status: </label>
-            <select name="status" class="status">
+            <select name="status" class="status" data-index=${library.getBookIndex(book)}>
                 ${book.stat === 'Not Started' ?
                 `<option value="Not Started" selected>Not Started</option>` :
                 `<option value="Not Started">Not Started</option>`}
@@ -43,6 +42,18 @@ const UI = () => {
             </fieldset>
             </select> 
         </section>`
+    }
+
+    const changeStatusListener = () => {
+        const main = document.querySelector('main')
+        const statuses = main.querySelectorAll('select')
+        statuses.forEach(stat => {
+            stat.addEventListener('click', () => {
+                const index = stat.dataset.index
+                library.getBook(index).stat = stat.value
+            })
+        })
+ 
     }
 
     const addBookListener = () => {
@@ -68,8 +79,9 @@ const UI = () => {
         submitForm.addEventListener('click', (e) => {
             const dialog = document.querySelector('dialog')
             const form = document.querySelector('form')
+            const inputs = form.querySelectorAll('input')
             let values = []
-            form.querySelectorAll('input').forEach(input => {
+            inputs.forEach(input => {
                 values.push(input.value)
             })
             const status = document.querySelector('#status').value
@@ -98,6 +110,7 @@ const UI = () => {
 
     const init = () => {
         loadLibrary()
+        changeStatusListener()
         addBookListener()
         closeFormListener()
         clearFormListener()
