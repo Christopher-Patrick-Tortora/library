@@ -6,21 +6,21 @@ const Library = () => {
         'Postmodern',
         190,
         "English",
-        "31 March 1969",
+        "1969-3-31",
         'Finished')
     const book2 = Book("The Great Gatsby",
         "F. Scott Fitzgerald",
         'Tragedy',
         208,
         "English",
-        "10 April 1925",
+        "1925-4-10",
         'Started')
     const book3 = Book("The Subtle Art of Not Giving a F*ck: A Counterintuitive Approach to Living a Good Life",
         "Mark Manson",
         'Self-help',
         272,
         "English",
-        "13 September 2016",
+        "2016-9-13",
         'Not Finished')
     const collection = [book1, book2, book3]
 

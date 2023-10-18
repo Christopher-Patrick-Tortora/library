@@ -76,12 +76,22 @@ main {
 }
 
 .book {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: start;
     padding: 0px 15px;
     border: 1px solid black;
 }
+
+.update {
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+    cursor: pointer;
+}
+
+
 
 footer {
     grid-column: 1 / 3;
@@ -126,6 +136,7 @@ fieldset > li {
 button{
     cursor: pointer;
 }
+
 
 @font-face {
     font-family: library;
